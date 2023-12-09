@@ -67,9 +67,15 @@ function checkWinner() {
       if (pos1Value === pos2Value && pos2Value === pos3Value) {
         //console.log(`Winner is Player ${pos1Value}`);
         disableBoxes();
+        boxEle[pattern[0]].classList.add("match-pattern");
+        boxEle[pattern[1]].classList.add("match-pattern");
+        boxEle[pattern[2]].classList.add("match-pattern");
 
         setTimeout(() => {
           gameEle.style.display = "none";
+          boxEle[pattern[0]].classList.remove("match-pattern");
+          boxEle[pattern[1]].classList.remove("match-pattern");
+          boxEle[pattern[2]].classList.remove("match-pattern");
           showWinner(pos1Value);
         }, 1500);
         return true;

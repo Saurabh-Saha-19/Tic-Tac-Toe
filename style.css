@@ -53,9 +53,23 @@ body {
   font-size: 8vmin;
   color: #2a9d8f;
   background-color: #edede9;
+  transition: all 0.3s ease-in-out;
 }
 .box:hover {
   cursor: pointer;
+  transform: scale(0.9, 0.9);
+  font-size: 10vmin;
+}
+
+.match-pattern {
+  font-size: 12vmin;
+  transform: scale(1, 1);
+  color: #8338ec;
+}
+.match-pattern:hover {
+  font-size: 12vmin;
+  transform: scale(1, 1);
+  color: #8338ec;
 }
 
 #reset-button {
