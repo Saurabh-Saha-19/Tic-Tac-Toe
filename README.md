@@ -1,5 +1,12 @@
 # Tic Tac Toe Game App:
 
+
+
+https://github.com/Saurabh-Saha-19/Tic-Tac-Toe/assets/105578034/e91a4668-4197-4eb7-a30f-358e1835c873
+
+![ss](https://github.com/Saurabh-Saha-19/Tic-Tac-Toe/assets/105578034/5e07361b-3704-4478-ba36-bd56ae6d4252)
+
+
 This is a tic tac toe ❌⭕❌ game app developed using HTML, CSS, and JS (with DOM Manipulation).
 
 The functionalities are:
