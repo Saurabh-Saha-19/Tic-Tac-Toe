@@ -28,6 +28,11 @@ body {
   font-size: 8vmin;
 }
 
+#winner-box {
+  margin-top: 3rem;
+  font-size: 5vmin;
+}
+
 #game {
   height: 60vmin;
   width: 60vmin;
@@ -59,4 +64,12 @@ body {
   color: #ffffff;
   background-color: #000814;
   border: none;
+}
+
+#reset-button:hover {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }

@@ -1,4 +1,5 @@
 let turn = Math.floor(Math.random() * 2);
+let boxClickCount = 0;
 const winningPatterns = [
   [0, 1, 2],
   [3, 4, 5],
@@ -11,10 +12,14 @@ const winningPatterns = [
 ];
 
 const boxEle = document.querySelectorAll(".box");
+const gameEle = document.querySelector("#game");
+const winnerEle = document.querySelector("#winner-box");
+const resetButtonEle = document.querySelector("#reset-button");
 
 function startGame() {
   boxEle.forEach((box) => {
     box.addEventListener("click", () => {
+      boxClickCount++;
       if (turn == 0) {
         box.textContent = "O";
         turn = 1;
@@ -23,9 +28,33 @@ function startGame() {
         turn = 0;
       }
       box.disabled = true;
-      checkWinner();
+      let isWinner = checkWinner();
+      if (boxClickCount === 9 && !isWinner) {
+        setTimeout(() => {
+          gameEle.style.display = "none";
+          gameDraw();
+        }, 1000);
+      }
     });
   });
+}
+
+function disableBoxes() {
+  boxEle.forEach((box) => {
+    box.disabled = true;
+  });
+}
+
+function showWinner(winner) {
+  winnerEle.innerHTML = `The Winner is Player ${winner}`;
+  winnerEle.classList.remove("hide");
+  resetButtonEle.innerHTML = "New Game";
+}
+
+function gameDraw() {
+  winnerEle.innerHTML = `The Game is drawn!`;
+  winnerEle.classList.remove("hide");
+  resetButtonEle.innerHTML = "New Game";
 }
 
 function checkWinner() {
@@ -36,11 +65,31 @@ function checkWinner() {
 
     if (pos1Value != "" && pos2Value != "" && pos3Value != "") {
       if (pos1Value === pos2Value && pos2Value === pos3Value) {
-        console.log(`Winner is Player ${pos1Value}`);
+        //console.log(`Winner is Player ${pos1Value}`);
+        disableBoxes();
+
+        setTimeout(() => {
+          gameEle.style.display = "none";
+          showWinner(pos1Value);
+        }, 1500);
+        return true;
       }
     }
   });
 }
+
+resetButtonEle.addEventListener("click", () => {
+  boxEle.forEach((box) => {
+    box.innerHTML = "";
+    box.disabled = false;
+  });
+  boxClickCount = 0;
+
+  winnerEle.classList.add("hide");
+  gameEle.style.display = "flex";
+
+  resetButtonEle.innerHTML = "Reset Game";
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   startGame();
