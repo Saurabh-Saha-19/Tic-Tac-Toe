@@ -2,7 +2,11 @@
 
 
 
-https://github.com/Saurabh-Saha-19/Tic-Tac-Toe/assets/105578034/e91a4668-4197-4eb7-a30f-358e1835c873
+
+https://github.com/Saurabh-Saha-19/Tic-Tac-Toe/assets/105578034/22568c9c-4d49-46be-9198-3a1d65e65a63
+
+
+
 
 ![ss](https://github.com/Saurabh-Saha-19/Tic-Tac-Toe/assets/105578034/5e07361b-3704-4478-ba36-bd56ae6d4252)
 
